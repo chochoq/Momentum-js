@@ -3,11 +3,8 @@ const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector("button");
 
 function onLoginBtnClick() {
-    if (loginInput.value==="") {
-        alert("인풋에 글쓰기기기ㅣ");
-    } else {
-        console.log("hi",loginInput.value);
-    }
+    const userName = loginInput.value;
+        console.log("hi",userName);
 }
 
 loginButton.addEventListener("click",onLoginBtnClick )
