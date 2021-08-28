@@ -8,13 +8,14 @@ const USERNAME_KEY = "userName";
 // username을 입력할 경우
 function onLoginSubmit(e) {
     e.preventDefault();
-    const userName = loginInput.value;
-    localStorage.setItem(USERNAME_KEY, userName);
+    const inputUserName = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, inputUserName);
     loginForm.classList.add(HIDDEN_CLASS_NAME);
-    paintGreeting(userName);
+    paintGreeting();
 }
 
-function paintGreeting(userName) {
+function paintGreeting() {
+    const userName = localStorage.getItem(USERNAME_KEY);
     greeting.innerText = `Welcome back ${userName}!!`;
     greeting.classList.remove(HIDDEN_CLASS_NAME);
 }
@@ -28,5 +29,5 @@ if (savedUserName === null) {
     loginForm.addEventListener("submit", onLoginSubmit);
 } else {
     // greeting보여주기
-    paintGreeting(savedUserName);
+    paintGreeting();
 }
