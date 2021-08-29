@@ -2,10 +2,12 @@ const todoForm = document.getElementById("todo-form");
 const todoInput = todoForm.querySelector("input");
 const todoList = document.getElementById("todo-list");
 
-const todos = [];
+const TODOS_KEY = "todos";
+
+let todos = [];
 
 function saveTodos() {
-    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 
 function deleteTodoList(e) {
@@ -37,3 +39,12 @@ function todoSubmit(e) {
 };
 
 todoForm.addEventListener("submit", todoSubmit);
+
+// todo를 로컬스토리지에 배열 형태로 저장
+const savedTodos = localStorage.getItem(TODOS_KEY);
+
+if (savedTodos) {
+    const parsedTodos = JSON.parse(savedTodos);
+    todos = parsedTodos;
+    parsedTodos.forEach(paintTodo);
+}
