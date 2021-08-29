@@ -13,14 +13,18 @@ function saveTodos() {
 function deleteTodoList(e) {
     const li = e.target.parentElement;
     li.remove();
+    todos = todos.filter((todo) => todo.id !== parseInt(li.id));
+    saveTodos();
 };
 
 function paintTodo(newTodo) {
-    const li =document.createElement("li");
+    const li = document.createElement("li");
+    li.id = newTodo.id;
+
     const span = document.createElement("span");
     const btn = document.createElement("button");
 
-    span.innerHTML = newTodo;
+    span.innerHTML = newTodo.text;
     btn.innerHTML = "삭제";
     btn.addEventListener("click",deleteTodoList);
 
@@ -33,8 +37,14 @@ function todoSubmit(e) {
     e.preventDefault();
     const newTodo = todoInput.value;
     todoInput.value = "";
-    todos.push(newTodo);
-    paintTodo(newTodo);
+    
+    const newTodoObj = {
+        id: Date.now(),
+        text: newTodo
+    };
+    
+    todos.push(newTodoObj);
+    paintTodo(newTodoObj);
     saveTodos();
 };
 
