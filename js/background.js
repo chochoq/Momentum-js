@@ -1,7 +1,8 @@
 const images = [
-    "cat.jpeg",
     "mountain.jpg",
-    "vegan.jpg",
+    "1141103.jpeg",
+    "920288769.jpeg",
+    "o8XSD1.jpg"
 ];
 
 const randomImg = images[Math.floor(Math.random() * images.length)];

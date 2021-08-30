@@ -1,3 +1,94 @@
 .hidden {
     display: none;
 }
+
+img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+#container{
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    color: white;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 30%;
+    display: flex;
+
+    align-items: center;
+}
+
+
+.content{
+
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    color: white;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: 50%;
+    display: flex;
+    align-items: stretch;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid wheat;
+    background-color: transparent;
+    margin: 50px 0px 0px;
+    text-align: center;
+    width:300px;
+}
+
+#todo-list li{
+    display: flex;
+    justify-content: space-between;
+    color: wheat;
+}
+
+button{
+    border-radius: 50px;
+    color: black;
+    border: 1px solid wheat;
+    background: none;
+    padding: 8px;
+}
+
+button:hover {
+    background: wheat;
+    cursor: pointer;
+}
+
+#clock{
+    z-index: 1;
+    color: white;
+    left: 50%;
+    top: 30%;
+    margin: 10px;
+
+    font-size: 100px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+#clockSecond{
+    font-size: 40px;
+} 
+
+.up{
+    position: fixed;
+    z-index: 1;
+    color: wheat;
+
+    width: 100%;
+    min-width: 820px;
+    text-align: right;
+    right: 15px;
+}
