@@ -4,11 +4,11 @@
 
 img{
     position: fixed;
+    z-index: 0;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0;
 }
 
 #container{
@@ -26,7 +26,6 @@ img{
 
 
 .content{
-
     flex-direction: column;
     position: fixed;
     z-index: 1;

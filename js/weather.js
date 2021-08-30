@@ -1,12 +1,9 @@
 const API_KEY = "fd9508e143b9d5083dccc7553d9644f9";
 
-// const weather = document.querySelector("#weather span:first-child");
-// const city = document.querySelector("#weather span:last-child");
-
 function onGeoOk(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    console.log(lat, lon);
+
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
     
     fetch(url)
@@ -15,11 +12,8 @@ function onGeoOk(position) {
             const weather = document.querySelector("#weather span:first-child");
             const city = document.querySelector("#weather span:last-child");
             
-            console.log(url);
-            
             weather.innerText = `${data.weather[0].main} / ${data.main.temp}℃`
             city.innerText = `/ Your ${data.name}`;
-
         });
 }
 
